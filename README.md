@@ -1,7 +1,5 @@
 # Simple CRUD App with Laravel 8
 
-![Laravel Logo](https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg)
-
 This is a basic CRUD (Create, Read, Update, Delete) application built with Laravel 8. Laravel is a web application framework that provides an expressive and elegant syntax.
 
 ## Features
@@ -23,4 +21,4 @@ Make sure you have the following installed:
 ### Installation
 
 1. Clone this repository:
-2. ....
+2. You need to connect to database, I use MYSQL DB.

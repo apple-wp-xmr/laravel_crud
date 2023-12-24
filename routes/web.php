@@ -23,10 +23,7 @@ Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
     Route::patch('/{post}', 'UpdateController')->name('post.update');
     Route::delete('/{post}', 'DestroyController')->name('post.destroy');
     
-    
-    Route::get('/posts/update', "PostController@update");
-    Route::get('/posts/delete', "PostController@delete");
-    Route::get('/posts/firstOrCreate', "PostController@firstOrCreate");
+    // Route::get('/posts/firstOrCreate', "PostController@firstOrCreate");
 });
 
 
@@ -35,5 +32,17 @@ Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
 Route::get('/main', "MainController@index")->name('main.index');
 Route::get('/contacts', "ContactsController@index")->name('contact.index');
 Route::get('/about', "AboutController@index")->name('about.index');
+Route::get('/calc', 'SampleController@calculate');
 
 
+
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function(){
+    Route::group(['namespace' => 'Post'], function(){
+            Route::get('/post', "IndexController")->name('admin.post.index');
+    });
+});
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');

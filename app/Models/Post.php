@@ -2,29 +2,24 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
     use HasFactory;
-    use SoftDeletes;
-    protected $table = 'posts';
+    use Filterable;
     protected $guarded = false;
 
 
-    public function category() 
+    public function category()
     {
-        // return $this->belongsTo(Category::class, 'category_id', 'id');
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function tags()
     {
-        // return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
-        return $this->belongsToMany(Tag::class  );
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id');
     }
-
-
 }

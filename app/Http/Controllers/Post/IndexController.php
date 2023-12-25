@@ -12,6 +12,8 @@ class IndexController extends BaseController
     public function __invoke(FilterRequest $request)
     {  
 
+        // $this->authorize('view', auth()->user());
+
         // $posts = Post::paginate(10);
         // return view('post.index', compact('posts'));
 

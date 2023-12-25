@@ -29,7 +29,7 @@ class AdminPolicy
      */
     public function view(User $user, User $model)
     {
-        // return $model->role == 'admin';
+        return $model->role == 'admin';
     }
 
     /**
